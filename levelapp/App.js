@@ -48,7 +48,7 @@ const ProfileScreen = () =>{
 export const MainScreens = () =>{
   return(
     <Tab.Navigator>
-      <Tab.Screen name="home" component = {HomeScreen}/>
+      <Tab.Screen name="home" component = {HomeScreen} />
       <Tab.Screen name="profile" component = {ProfileScreen}/>
     </Tab.Navigator>
   );
@@ -58,7 +58,7 @@ export const InitNav = () => {
   const {loggedin} = useContext(Context);
 
   return(
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown:false}} >
       {loggedin
       ?<Stack.Screen name="all" component={MainScreens}/>
       :<Stack.Screen name="login" component={LoginScreen}/>}
